@@ -1,0 +1,36 @@
+/*Minimales CSS, hauptsächlich für korrekte Darstellung der Vektorillustrationen*/
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 5px;
+}
+.content{
+    display: flex;
+    padding: 5px 0;
+}
+.container{
+    flex: 33.33%;
+    max-width: 33.33%;
+}
+.container img {
+    vertical-align: middle;
+    width: 100%;
+}
+#klavier-svg{
+    width: 100%;
+    vertical-align: middle;
+}
+/*Graphanimtion*/
+#el_DdkKfWiVV{
+    vertical-align: middle;
+}
+#tasten{
+    width: 100%;
+    vertical-align: middle;
+}
+#group{
+    width: 100%;
+    vertical-align: middle;
+}
