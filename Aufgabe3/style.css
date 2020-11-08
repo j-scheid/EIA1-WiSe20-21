@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-image: url("./assets/grafik/bg.png");
+    max-width: 800px;
+    margin: 0 auto;
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2) format('woff2');
+  }
+
+/*Navigation*/
+.navigation {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 100px;
+    background: #333333;
+    padding: 0;
+    margin: 0 0;
+    border-radius: 0px 0px 5px 5px;
+}
+.navigation a{
+    text-decoration: none;
+    text-align: center;
+    color: #fcf9fa;
+    padding: 25px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.navigation a:hover{
+    color: #BC3914 !important;
+}
+.active{
+    color: #BC3914 !important;
+    font-weight: 800;
+}
+
+/*Hero*/
+h3{
+    color: #BC3914;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 200;
+}
+#circle{
+    position: relative;
+    top: -300px;
+    width: 835px;
+    height: 835px;
+    border-radius: 50%;
+    background-color: #BC3914; 
+}
+.hero-container{
+    z-index: 5;
+    position: absolute;
+    max-width: 800px;
+}
+.hero-container h2,p{
+    color: #F6F5EC;
+    position: relative;
+}
+.hero-container h1{
+    font-size: 240px;
+    letter-spacing: -23px;
+    text-align: center;
+    margin: auto;
+    background-image: url("./assets/grafik/bg.png");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip:text;
+    background-clip:text;    
+}
+.hero-container h2{
+    font-size: 70px;
+    line-height: 50px;
+    margin: 0;
+}
+.hero-column{
+    width: 50%;
+    float: left;
+}
+#hero-text{
+    margin-top: -20px;
+    padding-right: 40px;
+}
+#horse-logo{
+    position: relative;
+    width: 200px;
+    top: 100px;
+    pointer-events: none;
+    -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+#facebook-icon{
+    opacity: .5;
+}
+#facebook-icon:hover{
+    opacity: 1;
+}
+
+/*Content*/
+.content{
+    margin-top: -200px;
+    padding-bottom: 100px;
+}
+#animation-section{
+    padding: 50px 0px 200px 0px;
+}
+#animation-section video{
+    padding-top: 20px;
+}
+#photo-section img{
+    padding-top: 20px;
+}
+
+/*Contact*/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background-color: #cccccc;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #BC3914;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #bb4c2db7;
+  }
+  .privacy-text{
+      color: #1d1c1c
+  }
+  /*About me*/
+  li{
+    color: #1d1c1c;
+    font-size: 18px;
+  }
