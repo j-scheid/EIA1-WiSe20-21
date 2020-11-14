@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+body{
+    background-image: url(./images/bg.png);   
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: block;
+    position: absolute;
+    top: 25%;
+}
+.card-bg{
+    -webkit-box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219); 
+    box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219);
+}
+.card-content{
+    font-family: 'Mountains of Christmas', cursive;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 50px 50px 75px;
+    width: 400px;
+}
+/*Sterne*/
+.star {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: url("./images/stern.png") no-repeat;
+    transition: all 0.5s ease-in-out;
+}
+.star:hover {
+    background: url("./images/stern_hover.png") no-repeat;
+    transition: all 0.5s ease-in-out;
+}
+/*Positionierung der einzelnen Sterne*/
+#first{
+    top: 200px;
+    left: 40px;
+}
+#second{
+    top: 120px;
+    left: 180px;
+}
+#third{
+    top: 280px;
+    right: 160px;
+}
+#fourth{
+    top: 190px;
+    right: 20px;
+}

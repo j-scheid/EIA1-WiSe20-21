@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'christmasevemedium';
+    src: url('./fonts/christmaseve.eot');
+    src: url('./fonts/christmaseve.woff2') format('woff2'),
+         url('./fonts/christmaseve.woff') format('woff'),
+         url('./fonts/christmaseve.ttf') format('truetype'),
+         url('./fonts/christmaseve.svg#christmasevemedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: url(./images/bg.png);   
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: block;
+    position: relative;
+}
+.card-bg{
+    -webkit-box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219); 
+    box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219);
+}
+.card-txt{
+    font-family: 'christmasevemedium';
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 40px;
+    font-size: 30px;
+}
+.card-txt h1{
+    font-size: 70px;
+}

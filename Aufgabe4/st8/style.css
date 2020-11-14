@@ -1,0 +1,25 @@
+body{
+    background-image: url(./images/bg.png);   
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: block;
+    position: relative;
+}
+.card-bg{
+    -webkit-box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219); 
+    box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219);
+}
+.yt{
+    position: absolute;
+    top: 30px;
+    left: 25px;
+}
+#banderole {
+    position: absolute;
+    top: 276px;
+    right: 0px;
+}

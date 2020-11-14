@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+body{
+    background-image: url(./images/bg.png);   
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: block;
+    position: relative;
+}
+.card-bg{
+    -webkit-box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219); 
+    box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219);
+}
+.card-txt{
+    font-family: 'Mountains of Christmas', cursive;
+    color: white;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 30px 50px 50px 75px;
+    width: 400px;
+}
+#banderole {
+    position: absolute;
+    top: 276px;
+    right: 0px;
+}
+.schnee1 {
+    position: absolute;
+    left: 100px;
+    width: 25px;
+    height: 25px;
+    animation-name: schneefall;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+.schnee2 {
+    position: absolute;
+    left: 400px;
+    width: 25px;
+    height: 25px;
+    animation-name: schneefall;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+@keyframes schneefall {
+    from {top: 0px;}
+    to { top: 340px;}
+}

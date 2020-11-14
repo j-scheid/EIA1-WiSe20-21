@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+body{
+    background-image: url(./images/bg.png);   
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: block;
+    position: absolute;
+    top: 25%;
+}
+.card-bg{
+    -webkit-box-shadow: 9px 10px 25px 2px rgba(204,204,204,0.85); 
+    box-shadow: 9px 10px 25px 2px rgba(204,204,204,0.85);
+}
+.card-text{
+    font-family: 'Mountains of Christmas', cursive;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 50px 50px 75px;
+    width: 400px;
+}
+.card-img img{
+    position: absolute;
+}
+.busch{
+    bottom: 300px;
+    left: -80px;
+}
+.pinguin{
+    bottom: -30px;
+    right: -30px;
+}
