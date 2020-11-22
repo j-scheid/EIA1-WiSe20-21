@@ -38,8 +38,8 @@ console.log("Gesamtemissionen 2018: " + total18);
 for (var i = 0; i < Object.keys(continent).length; i++) {
     console.log("////");
     console.log("Die Emission von " + continent[i].name + " ist: " + continent[i].e18 + "kg CO2");
-    console.log("Relativ zur Gesamtemission der Welt verursacht " + continent[i].name + " damit " + +((continent[i].e18 / 18 * 100).toFixed(2)) + "%"); //mit +() umschliessen, sonst string
-    console.log("Für " + continent[i].name + " hat sich 2018 im Vergleich zu 2008 die Emission um " + +((continent[i].e18 / continent[i].e08 * 100).toFixed(2)) + "% verändert");
+    console.log("Relativ zur Gesamtemission der Welt verursacht " + continent[i].name + " damit " + +((continent[i].e18 / total18 * 100).toFixed(2)) + "%"); //mit +() umschliessen, sonst string
+    console.log("Für " + continent[i].name + " hat sich 2018 im Vergleich zu 2008 die Emission um " + +((continent[i].e18 / continent[i].e08 * 100 - 100).toFixed(2)) + "% verändert");
     console.log("2018 im Vergleich zu 2008 sind das " + +((continent[i].e18 - continent[i].e08).toFixed(2)) + "kg CO2");
 }
 //# sourceMappingURL=script.js.map
