@@ -10,7 +10,7 @@ var sounds: {
   Ukulele: {
     "A2": {
       audio: new Audio("./sounds/a2.mp3"), //wird abgespielt
-      svgElement: "gChuck", //zu animierendes Element, open A
+      svgElement: "gChuck", //zu animierendes Element, open A, daher Platzhalter
     },
     "A#2": {
       audio: new Audio("./sounds/asharp2.mp3"),
@@ -22,7 +22,7 @@ var sounds: {
     },
     "C": {
       audio: new Audio("./sounds/c1.mp3"),
-      svgElement: "gChuck", //open C
+      svgElement: "gChuck", //open C, daher Platzhalter
     },
     "C2": {
       audio: new Audio("./sounds/c2.mp3"),
@@ -135,10 +135,10 @@ function keypress() {
 //Checken, ob loop abgespielt werden soll
 function checkLoop() {
   document.querySelector("#playButton").addEventListener("click", function () {
+    document.querySelector("#playButton").classList.add("blocked"); //playButton darf nur ein mal gedrückt werden
     setInterval(function() {
       playLoop("loop1");
      }, 5000);  //mit einer Schleife nächste Woche besser zu lösen
-     document.querySelector("#playButton").classList.add("blocked"); //playButton darf nur ein mal gedrückt werden
   });
 }
 //Sound abspielen

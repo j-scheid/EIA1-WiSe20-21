@@ -158,10 +158,10 @@ function keypress() {
 //Checken, ob loop abgespielt werden soll
 function checkLoop() {
     document.querySelector("#playButton").addEventListener("click", function () {
+        document.querySelector("#playButton").classList.add("blocked"); //playButton darf nur ein mal gedrückt werden
         setInterval(function () {
             playLoop("loop1");
         }, 5000); //mit einer Schleife nächste Woche besser zu lösen
-        document.querySelector("#playButton").classList.add("blocked"); //playButton darf nur ein mal gedrückt werden
     });
 }
 //Sound abspielen
