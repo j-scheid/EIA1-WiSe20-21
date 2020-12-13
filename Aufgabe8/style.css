@@ -1,0 +1,220 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: block;
+    background-color: #89a02c;
+    align-items: center;
+    gap: 0px 0px;
+    font-family: Pacifico;
+    color: #89a02c;
+}
+
+#svg {
+    padding-top: 20px;
+    text-align: center;
+    height: 300px;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(30, 30px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 5px;
+    justify-content: center;
+}
+
+.key {
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    grid-column: span 2;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 17px;
+}
+
+.hiddenKey {
+    background-color: rgba(77, 77, 77, 0.198);
+    pointer-events: none;
+}
+
+.key:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.big {
+    grid-column: span 4;
+}
+
+.medium {
+    grid-column: span 3;
+}
+
+.leftshift {
+    grid-column: span 5;
+}
+
+.space {
+    grid-column: span 20;
+    margin-left: 300px;
+}
+
+.controls {
+    position: static;
+    justify-content: center;
+    display: flex;
+    z-index: 2;
+    padding-bottom: 10px;
+    margin-top: -20px;
+}
+
+.controlButton {
+    width: 25px;
+    margin: 0 15px;
+    padding: 5px 15px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer !important;
+}
+
+.blocked {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.pressedKey {
+    -webkit-animation: highlightKey 0.5s ease-in-out;
+    -moz-animation: highlightKey 0.5s ease-in-out;
+    -o-animation: highlightKey 0.5s ease-in;
+    animation: highlightKey 0.5s ease-in-out;
+}
+
+.recordingActive {
+    -webkit-animation: highlightKey 1s ease-in-out infinite;
+    -moz-animation: highlightKey 1s ease-in-out infinite;
+    -o-animation: highlightKey 1s ease-in infinite;
+    animation: highlightKey 1s ease-in-out infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes highlightKey {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes highlightKey {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes highlightKey {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes highlightKey {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.activeNote {
+    -webkit-animation: highlightNote 0.5s ease-in-out;
+    -moz-animation: highlightNote 0.5s ease-in-out;
+    -o-animation: highlightNote 0.5s ease-in;
+    animation: highlightNote 0.5s ease-in-out;
+}
+
+@-webkit-keyframes highlightNote {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes highlightNote {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes highlightNote {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes highlightNote {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
