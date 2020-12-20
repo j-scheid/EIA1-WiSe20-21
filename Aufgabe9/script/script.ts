@@ -7,7 +7,7 @@ interface Task {
 
 let allTasks: Task[] = [
   {
-    content: "Categorise your Tasks with cat emotions",
+    content: "Click the cat to categorise your Task",
     status: false,
     color: "green",
     emoji: "😻"

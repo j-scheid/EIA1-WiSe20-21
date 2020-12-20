@@ -1,6 +1,6 @@
 var allTasks = [
     {
-        content: "Categorise your Tasks with cat emotions",
+        content: "Click cat to categorise your Tasks",
         status: false,
         color: "green",
         emoji: "😻"
