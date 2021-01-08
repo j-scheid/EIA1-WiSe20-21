@@ -1,29 +1,34 @@
 interface Task {
   content: String;
   status: Boolean; //true = done, false = to do
+  color: String;
   emoji: String;
 }
 
 let allTasks: Task[] = [
   {
+    content: "New! Create tasks with your voice (choose the emoji first)",
+    status: true,
+    color: "green",
+    emoji: "⭐"
+  },
+  {
     content: "Click the cat to categorise your Task",
     status: false,
+    color: "green",
     emoji: "😻"
   },
   {
     content: "Press 'Enter' to focus on input field",
     status: true,
+    color: "red",
     emoji: "🙀"
   },
   {
     content: "Hover / tap Task to delete",
     status: false,
+    color: "green",
     emoji: "😿"
-  },
-  {
-    content: "Use <b>Markup</b>",
-    status: true,
-    emoji: "😽"
   }
 ];
 
@@ -56,7 +61,9 @@ window.addEventListener("load", function (): void {
       inputField.focus();
     }
   });
-  let selectedEmoji: HTMLCollection = document.getElementsByClassName("selectEmoji");
+  let selectedEmoji: HTMLCollection = document.getElementsByClassName(
+    "selectEmoji"
+  );
   for (let f: number = 0; f < selectedEmoji.length; f++) {
     selectedEmoji[f].addEventListener("click", function (): void {
       currentEmoji = selectedEmoji[f].innerHTML;
@@ -65,6 +72,7 @@ window.addEventListener("load", function (): void {
     });
   }
   displayTasks();
+  artyom();
 });
 
 function displayTasks(): void {
@@ -95,9 +103,17 @@ function displayTasks(): void {
 
 //Statistiken oben
 function calculateStats(): void {
-  stats.innerHTML = "<b>" + allTasks.length + "</b> Tasks";
-  if (allTasks.length > 10) {
-    alert("Da du hier nicht speichern kannst, musst du alles noch heute erledigen!");
+  let todoCount: number = 0;
+  for (var i: number = 0; i < allTasks.length; ++i) {
+      if (allTasks[i].status == false) {
+          todoCount++;
+      }
+  }
+  stats.innerHTML = "<b>" + todoCount + "</b> To Do / <b>" + +(allTasks.length - todoCount) + "</b> Done / <b>" + allTasks.length + "</b> Total";
+  if (allTasks.length > 20) {
+    alert(
+      "Da du hier nicht speichern kannst, musst du alles noch heute erledigen!"
+    );
   }
 }
 
@@ -111,7 +127,7 @@ function addTask(): void {
       color: "white",
       emoji: currentEmoji
     }; //default: unerledigt und ohne Farbe
-    allTasks.push(newTask);
+    allTasks.unshift(newTask);
     inputField.value = "";
     //console.log(allTasks);
     displayTasks();
@@ -133,4 +149,46 @@ function deleteTask(i: number): void {
 function togglePopup(): void {
   popup.classList.toggle("show");
   //popup.style.display = "block";
+}
+
+//Artyom
+
+
+
+function artyom(): void {
+  const artyom: any = new Artyom();
+
+  artyom.addCommands({
+    indexes: ["erstelle Aufgabe *", "erstelle neue Aufgabe *", "neue Aufgabe *", "create Task *", "create Todo *", "create new Task *", "create new todo *"],
+    smart: true,
+    action: function (i: number, wildcard: string): void {
+      const newVoiceTask: Task = {
+        content: wildcard,
+        status: false,
+        color: "white",
+        emoji: currentEmoji
+      }; //default: unerledigt und ohne Farbe
+      allTasks.unshift(newVoiceTask);
+      displayTasks();
+    }
+  });
+
+  function startContinuousArtyom(): void {
+    artyom.fatality();
+
+    setTimeout(function (): void {
+      artyom
+        .initialize({
+          lang: "de-DE",
+          continuous: true,
+          listen: true,
+          interimResults: true,
+          debug: false
+        })
+        .then(function (): void {
+          console.log("To create a new Task say: 'erstelle Aufgabe *', 'erstelle neue Aufgabe *', 'neue Aufgabe *', 'create Task *', 'create Todo *', 'create new Task *', 'create new todo *'");
+        });
+    },         250);
+  }
+  startContinuousArtyom();
 }

@@ -1,23 +1,27 @@
 var allTasks = [
     {
+        content: "New! Create tasks with your voice (choose the emoji first)",
+        status: true,
+        color: "green",
+        emoji: "⭐"
+    },
+    {
         content: "Click the cat to categorise your Task",
         status: false,
+        color: "green",
         emoji: "😻"
     },
     {
         content: "Press 'Enter' to focus on input field",
         status: true,
+        color: "red",
         emoji: "🙀"
     },
     {
         content: "Hover / tap Task to delete",
         status: false,
+        color: "green",
         emoji: "😿"
-    },
-    {
-        content: "Use <b>Markup</b>",
-        status: true,
-        emoji: "😽"
     }
 ];
 var inputField;
@@ -58,6 +62,7 @@ window.addEventListener("load", function () {
         _loop_1(f);
     }
     displayTasks();
+    artyom();
 });
 function displayTasks() {
     taskElement.innerHTML = ""; //clear
@@ -89,8 +94,14 @@ function displayTasks() {
 }
 //Statistiken oben
 function calculateStats() {
-    stats.innerHTML = "<b>" + allTasks.length + "</b> Tasks";
-    if (allTasks.length > 10) {
+    var todoCount = 0;
+    for (var i = 0; i < allTasks.length; ++i) {
+        if (allTasks[i].status == false) {
+            todoCount++;
+        }
+    }
+    stats.innerHTML = "<b>" + todoCount + "</b> To Do / <b>" + +(allTasks.length - todoCount) + "</b> Done / <b>" + allTasks.length + "</b> Total";
+    if (allTasks.length > 20) {
         alert("Da du hier nicht speichern kannst, musst du alles noch heute erledigen!");
     }
 }
@@ -104,7 +115,7 @@ function addTask() {
             color: "white",
             emoji: currentEmoji
         }; //default: unerledigt und ohne Farbe
-        allTasks.push(newTask);
+        allTasks.unshift(newTask);
         inputField.value = "";
         //console.log(allTasks);
         displayTasks();
@@ -123,5 +134,40 @@ function deleteTask(i) {
 function togglePopup() {
     popup.classList.toggle("show");
     //popup.style.display = "block";
+}
+//Artyom
+function artyom() {
+    var artyom = new Artyom();
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe *", "erstelle neue Aufgabe *", "neue Aufgabe *", "create Task *", "create Todo *", "create new Task *", "create new todo *"],
+        smart: true,
+        action: function (i, wildcard) {
+            var newVoiceTask = {
+                content: wildcard,
+                status: false,
+                color: "white",
+                emoji: currentEmoji
+            }; //default: unerledigt und ohne Farbe
+            allTasks.unshift(newVoiceTask);
+            displayTasks();
+        }
+    });
+    function startContinuousArtyom() {
+        artyom.fatality();
+        setTimeout(function () {
+            artyom
+                .initialize({
+                lang: "de-DE",
+                continuous: true,
+                listen: true,
+                interimResults: true,
+                debug: false
+            })
+                .then(function () {
+                console.log("To create a new Task say: 'erstelle Aufgabe *', 'erstelle neue Aufgabe *', 'neue Aufgabe *', 'create Task *', 'create Todo *', 'create new Task *', 'create new todo *'");
+            });
+        }, 250);
+    }
+    startContinuousArtyom();
 }
 //# sourceMappingURL=script.js.map

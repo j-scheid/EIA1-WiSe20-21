@@ -1,0 +1,249 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #6ab141;
+    text-align: center;
+    padding: 15px;
+}
+
+.content {
+    width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 5em;
+    color: white;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#stats {
+    color: white;
+}
+
+.inputField {
+    position: relative;
+
+}
+
+.inputTask {
+    background: rgba(255, 255, 255, 0.733);
+    font-size: 1.5em;
+    padding: 25px 50px 20px 60px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 65px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#addButton {
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    outline: none;
+    color: #87b36e;
+    cursor: pointer;
+}
+
+#addButton:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.taskElement {
+    text-align: left !important;
+    position: relative;
+    font-size: 20px;
+    padding: 20px 60px 20px 60px;
+    margin-bottom: 8px;
+    background: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.checkbox {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: 2px solid rgb(51, 51, 51);
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.checkbox i {
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+.checkbox.false i {
+    display: none;
+}
+
+.checkbox:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.delete {
+    position: absolute;
+    right: 65px;
+    top: 23px;
+    color: rgb(114, 114, 114);
+    cursor: pointer;
+    display: none;
+}
+
+.taskElement:hover .delete {
+    display: block;
+}
+
+.delete:hover {
+    color: black;
+}
+
+.catEmoji {
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    width: 30px;
+    font-size: 1.5em;
+    pointer-events: none;
+}
+
+.catButton {
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    width: 60px;
+    height: 60;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.catButton:hover {
+    transform: scale(1.1);
+}
+
+.catButton:focus {
+    outline: none;
+}
+
+.fa-check {
+    font-size: 1em;
+}
+
+.popup {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: inline-block;
+
+}
+
+.popup .popupContent {
+    visibility: hidden;
+    width: 80%;
+    max-width: 300px;
+    padding: 30px 50px;
+    background-color: white;
+    color: rgb(24, 24, 24);
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219);
+    box-shadow: 9px 10px 25px 2px rgba(0, 0, 0, 0.219);
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.catGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    font-size: 3em;
+}
+
+.selectEmoji:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.closeEmoji {
+    float: right;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 2em;
+    color: rgb(114, 114, 114);
+}
+
+.closeEmoji:hover {
+    color: rgb(24, 24, 24);
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.closeEmoji:focus {
+    outline: none;
+    display: none;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .content {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+}

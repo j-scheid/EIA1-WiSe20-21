@@ -1,6 +1,7 @@
 interface Task {
   content: String;
   status: Boolean; //true = done, false = to do
+  color: String;
   emoji: String;
 }
 
@@ -8,22 +9,20 @@ let allTasks: Task[] = [
   {
     content: "Click the cat to categorise your Task",
     status: false,
+    color: "green",
     emoji: "😻"
   },
   {
     content: "Press 'Enter' to focus on input field",
     status: true,
+    color: "red",
     emoji: "🙀"
   },
   {
     content: "Hover / tap Task to delete",
     status: false,
+    color: "green",
     emoji: "😿"
-  },
-  {
-    content: "Use <b>Markup</b>",
-    status: true,
-    emoji: "😽"
   }
 ];
 
@@ -111,7 +110,7 @@ function addTask(): void {
       color: "white",
       emoji: currentEmoji
     }; //default: unerledigt und ohne Farbe
-    allTasks.push(newTask);
+    allTasks.unshift(newTask);
     inputField.value = "";
     //console.log(allTasks);
     displayTasks();
