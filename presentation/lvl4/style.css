@@ -64,14 +64,23 @@ ul {
     top: 23px;
     color: rgb(114, 114, 114);
     cursor: pointer;
-    display: none !important;
-}
-
-li :hover .delete {
     display: block !important;
 }
 
 .delete:hover {
+    color: black;
+}
+
+.edit {
+    position: absolute;
+    right: 25px;
+    top: 23px;
+    color: rgb(114, 114, 114);
+    cursor: pointer;
+    display: block !important;
+}
+
+.edit:hover {
     color: black;
 }
 
@@ -86,7 +95,7 @@ li :hover .delete {
 
 .catButton {
     position: absolute;
-    left: 2px;
+    left: -20px;
     top: 11px;
     width: 60px;
     height: 60;

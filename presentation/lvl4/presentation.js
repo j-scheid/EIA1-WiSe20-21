@@ -30,7 +30,7 @@ function dynamicList(element, items, builder) {
         element.innerHTML = "";
         items.forEach(function (item) {
             var content = builder(item);
-            element.innerHTML += "<li>" + content + "<span class='delete fas fa-trash'></span></li>";
+            element.innerHTML += "<li>" + content + "<span class='delete fas fa-trash'></span><span class='edit fas fa-edit'></span></li>";
         });
     };
     buildList(); //erstes Mal ausführen, um bestehende anzuzeigen
