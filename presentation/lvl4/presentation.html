@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lvl4</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+</head>
+<body>
+    <div class="content">
+        <button class="catButton">😺</button>
+        <input type="text" id="inputName" placeholder="Name"/>
+        <input type="email" id="inputEmail" placeholder="E-Mail-Adresse"/>
+        <input type="text" id="inputPhone" placeholder="Telefonnummer"/>
+
+        <button id="addToContacts">Hinzufügen <i class="fas fa-plus"></i></button>
+        <div class="popup">
+            <div class="popupContent" id="emojiMenu">
+              <button class="closeEmoji">
+                <i class="fas fa-times" class="closeIcon"></i>
+              </button>
+              <h3>Choose a cat for your task!</h3>
+              <div class="catGrid">
+                <div class="selectEmoji" id="smirking">😼</div>
+                <div class="selectEmoji" id="happyTears">😹</div>
+                <div class="selectEmoji" id="scared">🙀</div>
+                <div class="selectEmoji" id="pouting">😾</div>
+                <div class="selectEmoji" id="crying">😿</div>
+                <div class="selectEmoji" id="hearts">😻</div>
+                <div class="selectEmoji" id="grinning">😺</div>
+                <div class="selectEmoji" id="grinSmile">😸</div>
+                <div class="selectEmoji" id="kissing">😽</div>
+              </div>
+            </div>
+          </div>
+        <ul id="outputList"><!--Alternativ: <ol>-->
+        </ul>
+        <script src="presentation.js"></script>
+    </div>
+</body>
+</html>

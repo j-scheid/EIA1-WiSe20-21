@@ -1,19 +1,15 @@
-//Variablen initialisieren ("erstellen")
-let inputFieldName: HTMLInputElement; //warum nicht HTMLInputElement?
+let inputFieldName: HTMLInputElement;
 let inputFieldEmail: HTMLFormElement;
-let inputFieldPhone: HTMLFormElement; //Unterschied HTMLFormElement zu HTMLElement
-let outputList: HTMLElement; //Variablen als Thema
+let inputFieldPhone: HTMLFormElement;
+let outputList: HTMLElement;
 
 window.addEventListener("load", function (): void {
-  //Variablen deklarieren ("Zuweisen") Position relevant!!!! Müssen oben im load listener stehen
   inputFieldName = document.querySelector("#inputName");
   inputFieldEmail = document.querySelector("#inputEmail");
   inputFieldPhone = document.querySelector("#inputPhone");
   outputList = document.querySelector("#outputList");
 
-  document
-    .querySelector("#addToContacts")
-    .addEventListener("click", function (): void {
+  document.querySelector("#addToContacts").addEventListener("click", function (): void {
       addToContacts();
     });
   createContactsList();
@@ -22,7 +18,7 @@ window.addEventListener("load", function (): void {
 interface Contact {
   name: string;
   email: string;
-  phone: string; //; statt , | string statt number
+  phone: string;
 }
 var contactsList: Contact[] = [
   {
@@ -40,18 +36,16 @@ var contactsList: Contact[] = [
 function addToContacts(): void {
   let newContact: Contact = {
     name: inputFieldName.value,
-    email: inputFieldEmail.value, //kein Bindestrich
+    email: inputFieldEmail.value,
     phone: inputFieldPhone.value
   };
   contactsList.push(newContact);
-  createContactsList(); //vorherige Funktion existiert nicht
+  
+  createContactsList();
 }
 
 function createContactsList(): void {
-  outputList.innerHTML = ""; //clear (neu hinzugefügt, damit die Liste nicht jedes mal untereinander dargestellt wird, am besten mal raus nehmen und selber sehen)
   for (let index: number = 0; index < contactsList.length; index++) {
-    //let eintrag: HTMLElement = document.createElement("div"); --> Optional könnte man jedes Listenelement in ein div packen für leichteres Styling (Überleitung zu CSS?)
-    //eintrag.classList.add("eintragElement");
     outputList.innerHTML +=
       "<li>" +
       contactsList[index].name +

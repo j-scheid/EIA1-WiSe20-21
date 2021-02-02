@@ -1,0 +1,59 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #a54946;
+    text-align: center;
+    padding: 15px;
+}
+
+.content {
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.733);
+    font-size: 1.5em;
+    padding: 20px 10px 20px 10px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+    border: none;
+    border-radius: 15px;
+    width: 30%;
+    height: 65px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#addToContacts {
+    position: block;
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding-bottom: 15px;
+}
+
+#addToContacts:hover {
+    color: rgba(255, 255, 255, 0.363);
+    transform: scale(1.1);
+}
+
+li {
+    text-align: center !important;
+    position: relative;
+    font-size: 20px;
+    padding: 20px 60px 20px 60px;
+    margin: 8px;
+    background: white;
+    border: none;
+    border-radius: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
